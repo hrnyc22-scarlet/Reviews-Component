@@ -26,14 +26,14 @@ class App extends React.Component {
     })
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getAllData()
   }
 
   render () {
     return (
       <div> 
-        <Reviews reviews={this.state.data}/>
+        {this.state.data.length > 0 && <Reviews reviews={this.state.data}/>}
       </div>
     )
   }

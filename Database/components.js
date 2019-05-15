@@ -2,8 +2,8 @@ let db = require('./index.js')
 
 let findAll = (callback) => {
   db.all(`
-  SELECT DISTINCT 
-  Username
+  SELECT 
+  *
   FROM 
   myTable
   `,(err, rows ) => {
