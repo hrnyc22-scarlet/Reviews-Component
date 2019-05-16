@@ -1,6 +1,5 @@
 /*review component*/
 
-
 .review {
   border: 1px solid lightgray; 
   color: Gray;
@@ -8,6 +7,7 @@
 
 #black {
   color: black;
+  font-weight: 600;
 }
 
 /*header*/
@@ -59,11 +59,46 @@
   padding: 2.5%;
 }
 
-.read-more:hover {
-  border: 0px;
+.read-more {
+  color: gray;
 }
 
 .read-more:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.share {
+  margin-left: 2%;
+  color: gray;
+}
+
+.share:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25));
+  background-color: #fff;
+  border-radius: 2px;
+  top: 58.5%;
+  right: 72%;
+  width: 10%;
+  height: 10%;
+  padding: 24px;
+}
+
+.popup-text {
+  padding-top: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.popup-text:hover {
+  padding-top: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: darkgray;
 }

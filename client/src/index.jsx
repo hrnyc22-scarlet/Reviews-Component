@@ -7,9 +7,11 @@ class App extends React.Component {
   constructor (props) {
     super (props)
     this.state = {
-      data:[]
+      data:[],
+      popUp: false
     }
-
+    this.popUp = this.popUp.bind(this)
+    this.popDown = this.popDown.bind(this)
     this.getAllData = this.getAllData.bind(this)
   }
 
@@ -26,14 +28,26 @@ class App extends React.Component {
     })
   }
 
+  popUp () {
+    this.setState({
+      popUp: true
+    })
+  }
+
+  popDown () {
+    this.setState({
+      popUp: false
+    })
+  }
+
   componentDidMount() {
     this.getAllData()
   }
 
   render () {
     return (
-      <div> 
-        {this.state.data.length > 0 && <Reviews reviews={this.state.data}/>}
+      <div onClick={this.state.popUp ? this.popDown : ''}> 
+        {this.state.data.length > 0 && <Reviews reviews={this.state.data} popUp={this.popUp} popUpStatus={this.state.popUp}/>}
       </div>
     )
   }

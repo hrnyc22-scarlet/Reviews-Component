@@ -1,7 +1,7 @@
 import React from "react"
 import Rating from 'react-rating';
 
-class App extends React.Component {
+class Body extends React.Component {
   constructor (props) {
     super (props)
     this.state = {
@@ -44,4 +44,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default Body
