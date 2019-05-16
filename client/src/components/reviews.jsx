@@ -16,8 +16,7 @@ var reviews = function (props) {
             <Rating readonly="true" initialRating={Trip_Rating}/> 
           </div>
           <h2 id="black">{Header}</h2>
-          {console.log('getting here')}
-          <ReviewBody reviewBody={{Date_of_Stay, Trip_Type, Room_Tip, Service_Rating, Sleep_Rating, Location_Rating, Value_Rating}}/>
+          <ReviewBody reviewBody={{Body,Date_of_Stay, Trip_Type, Room_Tip, Service_Rating, Sleep_Rating, Location_Rating, Value_Rating}}/>
         </div>
       </div>
       <button id="black">Helpful</button><button id="black">Repost</button><button id="black">Share</button>

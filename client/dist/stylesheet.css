@@ -58,3 +58,12 @@
 .review-body-content {
   padding: 2.5%;
 }
+
+.read-more:hover {
+  border: 0px;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
