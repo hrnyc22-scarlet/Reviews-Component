@@ -1,14 +1,23 @@
 /*review component*/
 
+
 .review {
-  border: 1px solid grey; 
-  padding: 2.5%;
+  border: 1px solid lightgray; 
+  color: Gray;
+}
+
+#black {
+  color: black;
 }
 
 /*header*/
 
 .review-header {
   background-color: white;
+}
+
+.review-header-content {
+  padding: 2.5%;
 }
 
 .image-cropper {
@@ -34,9 +43,6 @@
   vertical-align: 100%;
 }
 
-.content {
-}
-
 .user {
   padding-bottom: 4%;
 }
@@ -47,4 +53,8 @@
 
 .review-body {
   background-color: rgb(249, 249, 249);
+}
+
+.review-body-content {
+  padding: 2.5%;
 }
