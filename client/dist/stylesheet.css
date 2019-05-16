@@ -1,3 +1,50 @@
-.header image {
+/*review component*/
+
+.review {
+  border: 1px solid grey; 
+  padding: 2.5%;
+}
+
+/*header*/
+
+.review-header {
+  background-color: white;
+}
+
+.image-cropper {
   display: inline-block;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.header-image {
+  display: inline;
+  margin: 0 auto;
+  margin-left: -25%;
+  height: 100%;
+  width: auto;
+}
+
+.header-text {
+  display: inline-block;
+  padding-left: 2%;
+  vertical-align: 100%;
+}
+
+.content {
+}
+
+.user {
+  padding-bottom: 4%;
+}
+
+.location {
+}
+/*body*/
+
+.review-body {
+  background-color: rgb(249, 249, 249);
 }
