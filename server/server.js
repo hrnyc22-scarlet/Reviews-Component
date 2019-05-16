@@ -11,7 +11,7 @@ app.use(morgan('combined'))
 // app.use('/',router)
 app.use('/',express.static(path.resolve(__dirname,'../client/dist/')))
 
-app.get('/findAll',(req,res)=>{
+app.get('/reviews',(req,res)=>{
   db.findAll((err,result)=>{
     if (err) {
       console.log('error',err)
