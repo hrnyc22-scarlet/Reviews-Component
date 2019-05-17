@@ -19,6 +19,37 @@
   text-decoration: underline;
 }
 
+.rating-container {
+ display: inline-block; 
+ direction: ltr;
+}
+
+.rating-circle-empty {
+  display: inline-block;
+  border-radius: 50%;
+  border: 5px double #00a680;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+}
+
+.rating-circle-half {
+  display: inline-block;
+  border-radius: 50%;
+  border: 5px double #00a680;
+  width: 6px;
+  height: 6px;
+  background-color: #00a680;
+}
+
+.rating-circle-full {
+  display: inline-block;
+  border-radius: 50%;
+  border: 5px double #00a680;
+  width: 6px;
+  height: 6px;
+  background-color: #00a680;
+}
 /*header*/
 
 .review-header {
