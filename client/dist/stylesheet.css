@@ -10,6 +10,15 @@
   font-weight: 600;
 }
 
+.on-click {
+  cursor: pointer;
+}
+
+.on-click:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /*header*/
 
 .review-header {
@@ -61,12 +70,23 @@
 
 .read-more {
   color: gray;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .read-more:hover {
+  margin-top: 1%;
+  margin-bottom: 1%;
   text-decoration: underline;
-  cursor: pointer;
 }
+
+.disclaimer {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-decoration: overline;
+}
+
+/*share buttons*/
 
 .share {
   margin-left: 2%;
@@ -87,18 +107,32 @@
   right: 72%;
   width: 10%;
   height: 10%;
-  padding: 24px;
+  padding: 16px;
 }
 
 .popup-text {
-  padding-top: 10px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-top: 11px;
+  padding-left: 23px;
+  padding-right: 23px;
+}
+
+.popup-icon {
+  padding-top: 5px;
+  padding-left: 23px;
+  padding-right: 23px;
+  text-align: center;
+}
+
+.popup-icon:hover {
+  padding-top: 5px;
+  padding-left: 23px;
+  padding-right: 23px;
+  text-align: center;
 }
 
 .popup-text:hover {
-  padding-top: 10px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-top: 11px;
+  padding-left: 23px;
+  padding-right: 23px;
   color: darkgray;
 }

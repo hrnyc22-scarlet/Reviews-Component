@@ -29,6 +29,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-rating": "^1.7.2",
+    "react-share": "^3.0.0",
     "react-star-ratings": "^2.3.0",
     "request": "^2.81.0",
     "sqlite3": "^4.0.8",
