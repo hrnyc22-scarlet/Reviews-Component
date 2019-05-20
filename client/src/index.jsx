@@ -1,7 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import axios from "axios"
-import Reviews from "./components/reviews.jsx"
+import ReviewsComponent from "./components/reviews.jsx"
+// import SearchReviewsComponent from "./components/SearchReviewsComponent.jsx"
+// import ReviewsSortComponent from "./components/ReviewsSortComponent.jsx"
 
 class App extends React.Component {
   constructor (props) {
@@ -43,11 +45,19 @@ class App extends React.Component {
   componentDidMount() {
     this.getAllData()
   }
-
+  //need to fix the state
   render () {
     return (
-      <div onClick={this.state.popUp ? this.popDown : ''}> 
-        {this.state.data.length > 0 && <Reviews reviews={this.state.data} popUp={this.popUp} popUpStatus={this.state.popUp}/>}
+      <div className="page-component">
+        {this.state.data.map((reviewData)=>{
+          return (
+            <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
+              {/* <ReviewsSortComponent/>
+              <SearchReviewsComponent/> */}
+              <ReviewsComponent reviewData={reviewData} popUp={this.popUp} popUpStatus={this.state.popUp}/>  
+            </div>
+          )
+        })}
       </div>
     )
   }
