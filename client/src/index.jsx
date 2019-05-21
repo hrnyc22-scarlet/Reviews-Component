@@ -10,15 +10,27 @@ class App extends React.Component {
     super (props)
     this.state = {
       data:[],
+      searchData: [],
       popUp: false
     }
     this.popUp = this.popUp.bind(this)
     this.popDown = this.popDown.bind(this)
     this.getAllData = this.getAllData.bind(this)
+    this.searchReviews = this.searchReviews.bind(this)
   }
 
-  searchReviews () {
-
+  searchReviews (searchTerm) {
+    let results = []
+    this.state.data.forEach(function (reviewData) {
+      if (reviewData.Body.includes(searchTerm)){
+        results.push(reviewData)
+      } else if (reviewData.Header.includes(searchTerm)){
+        results.push(reviewData)
+      }
+    })
+    this.setState({
+      searchData: results
+    })
   }
 
   getAllData () {
@@ -51,10 +63,12 @@ class App extends React.Component {
   }
   //need to fix the state
   render () {
+    let data;
+    this.state.searchData.length ? data = this.state.searchData : data = this.state.data;
     return (
       <div className="page-component">
         <SearchReviewsComponent search={this.searchReviews}/>
-        {this.state.data.slice(0,10).map((reviewData)=>{
+        {data.slice(0,10).map((reviewData)=>{
           return (
             <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
               {/* <ReviewsSortComponent/> */}
