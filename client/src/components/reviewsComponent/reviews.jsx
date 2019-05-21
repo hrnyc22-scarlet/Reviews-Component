@@ -14,7 +14,7 @@ var reviews = function (props) {
           <div className="rating-container" >
             <Rating rating={Trip_Rating}/>
           </div>
-          <div id="black" className="on-click body-header">{Header}</div>
+          <div id="black searchable" className="on-click body-header">{Header}</div>
           <ReviewBody reviewBody={{Body,Date_of_Stay, Trip_Type, Room_Tip, Service_Rating, Sleep_Rating, Location_Rating, Value_Rating}}/>
         </div>
       </div>
