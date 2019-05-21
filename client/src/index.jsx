@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import axios from "axios"
 import ReviewsComponent from "./components/reviewsComponent/reviews.jsx"
 import SearchReviewsComponent from "./components/searchComponent/search.jsx"
+
 // import ReviewsSortComponent from "./components/ReviewsSortComponent.jsx"
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
     this.state = {
       data:[],
       searchData: [],
+      searchTerm: "",
       popUp: false
     }
     this.popUp = this.popUp.bind(this)
@@ -36,7 +38,8 @@ class App extends React.Component {
       }
     })
     this.setState({
-      searchData: results.length ? results : "empty"
+      searchData: results.length ? results : "empty",
+      searchTerm: searchTerm
     })
   }
 
@@ -69,6 +72,8 @@ class App extends React.Component {
     this.getAllData()
   }
   //need to fix the state
+  //var Highlight = require('react-highlighter');
+
   render () {
     let data;
     this.state.searchData.length ? data = this.state.searchData : data = this.state.data;
@@ -76,18 +81,25 @@ class App extends React.Component {
       <div className="page-component">
         <SearchReviewsComponent search={this.searchReviews}/>
         { typeof data === "string" && 
-        <div className="no-results-search">No results found. <b>Try</b> removing a filter, changing your search, or 
-        <span onClick={this.clearSearch} className="clear-all on-click"> clear all </span> 
-        to read reviews.</div>}
-        { typeof data === "object" && 
-        data.slice(0,10).map((reviewData)=>{
-          return (
-            <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
-              {/* <ReviewsSortComponent/> */}
-              <ReviewsComponent reviewData={reviewData} popUp={this.popUp} popUpStatus={this.state.popUp}/>  
-            </div>
-          )
-        })}
+          <div className="no-results-search">No results found. <b>Try</b> removing a filter, changing your search, or 
+          <span onClick={this.clearSearch} className="clear-all on-click"> clear all </span> 
+          to read reviews.</div>
+        }
+        { typeof data === 'object' && 
+          data.slice(0,10).map((reviewData)=>{
+            return (
+              <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
+                {/* <ReviewsSortComponent/> */}
+                <ReviewsComponent 
+                  reviewData={reviewData} 
+                  popUp={this.popUp} 
+                  popUpStatus={this.state.popUp} 
+                  searchTerm={this.state.searchTerm}
+                />  
+              </div>
+            )
+          })
+        }
       </div>
     )
   }

@@ -86,6 +86,10 @@
   color: #069;
 }
 
+.highlight {
+  
+}
+
 /*review component*/
 
 .review {
@@ -172,6 +176,7 @@
   font-size: 16pt;
   margin-top: 1%;
   margin-bottom: 1%;
+  display: block;
 }
 
 .review-body {

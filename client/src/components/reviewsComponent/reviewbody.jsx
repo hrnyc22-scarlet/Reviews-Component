@@ -1,5 +1,6 @@
 import React from "react"
 import Rating from './rating.jsx';
+import Highlight from 'react-highlighter';
 
 class Body extends React.Component {
   constructor (props) {
@@ -21,9 +22,12 @@ class Body extends React.Component {
 
   render () {
     const {Body,Date_of_Stay, Trip_Type, Room_Tip, Service_Rating, Sleep_Rating, Location_Rating, Value_Rating} = this.props.reviewBody;
+    let dynamicBody = Body.length > 50 && this.state.readMore ? Body.slice(0,200) : Body
     return (
-      <div id="searchable">
-        "{Body.length > 50 && this.state.readMore ? Body.slice(0,200) : Body}"
+      <div>
+        <Highlight search={this.props.searchTerm}>
+        {dynamicBody}
+        </Highlight>
         <div className="read-more-container">
           <span onClick={this.changeRead} className="on-click">{this.state.readMore ? 'Read More' : 'Read Less'}</span>
           <span className="read-more-carrot-container">
