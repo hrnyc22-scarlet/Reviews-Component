@@ -10,35 +10,54 @@
 /*search component*/
 
 .search-container {
-  height:2%;
-  margin-bottom: 2%;
-  padding: 2%;
+  height:1%;
+  margin-bottom: 1%;
+  padding: 1%;
   border: 1px solid lightgray;
   background-color: white;
 }
 
 .search-container:focus-within {
-  height:2%;
-  margin-bottom: 2%;
-  padding: 2%;
+  height:1%;
+  margin-bottom: 1%;
+  padding: 1%;
   border: 1px solid lightgray;
-  outline: 2px solid green;
+  outline: 2px solid #00a680;
   background-color: white;
 }
 
 
 .search-icon {
-  width: 6%;
+  width: 4%;
   height: 6%;
   display: inline-block;
+
 }
 
 .input {
   border: 0;
-  width: 90%;
+  width: 85%;
   margin-left: 2%;
   display: inline-block;
   font-size: 14pt;
+  color: grey;
+}
+
+.input:focus {
+  border: 0;
+  width: 85%;
+  margin-left: 2%;
+  display: inline-block;
+  font-size: 14pt;
+  color: black;
+  outline-width: 0;
+}
+
+.cancel-search-icon {
+  width: 2%;
+  height: 2%;
+  display: inline-block;
+  margin-left: 5%;
 }
 
 /*review component*/
