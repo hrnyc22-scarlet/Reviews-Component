@@ -17,6 +17,10 @@ class App extends React.Component {
     this.getAllData = this.getAllData.bind(this)
   }
 
+  searchReviews () {
+
+  }
+
   getAllData () {
     axios.get('/reviews')
     .then((results)=>{
@@ -49,8 +53,8 @@ class App extends React.Component {
   render () {
     return (
       <div className="page-component">
-        <SearchReviewsComponent/>
-        {this.state.data.map((reviewData)=>{
+        <SearchReviewsComponent search={this.searchReviews}/>
+        {this.state.data.slice(0,10).map((reviewData)=>{
           return (
             <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
               {/* <ReviewsSortComponent/> */}
