@@ -44,7 +44,7 @@ class Search extends React.Component {
       name="name" 
       className="input"
       />
-      <img onClick={this.handleClear} src="./Cancel Search Icon.png" className="cancel-search-icon"></img>
+      <img onClick={this.handleClear} src="./Cancel Search Icon.png" className="cancel-search-icon on-click"></img>
     </form>
     )}
 }

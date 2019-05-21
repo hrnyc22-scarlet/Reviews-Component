@@ -1,4 +1,17 @@
 /*page*/
+#black {
+  color: black;
+  font-weight: 550;
+}
+
+.on-click {
+  cursor: pointer;
+}
+
+.on-click:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .page-component {
   background-color: #f2f2f2;
@@ -58,26 +71,27 @@
   margin-left: 5%;
 }
 
+.no-results-search {
+  background-color: #fef8d0;
+  margin: 12px 0 24px;
+  padding: 12px 18px;
+  border: 1px solid #fad69f;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.clear-all {
+  color: #069;
+}
+
 /*review component*/
 
 .review {
   border: 1px solid lightgray; 
   color: Gray;
   margin-bottom: 2%;
-}
-
-#black {
-  color: black;
-  font-weight: 550;
-}
-
-.on-click {
-  cursor: pointer;
-}
-
-.on-click:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 
 .rating-container {

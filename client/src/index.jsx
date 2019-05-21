@@ -17,6 +17,13 @@ class App extends React.Component {
     this.popDown = this.popDown.bind(this)
     this.getAllData = this.getAllData.bind(this)
     this.searchReviews = this.searchReviews.bind(this)
+    this.clearSearch = this.clearSearch.bind(this)
+  }
+
+  clearSearch () {
+    this.setState({
+      searchData: []
+    })
   }
 
   searchReviews (searchTerm) {
@@ -29,7 +36,7 @@ class App extends React.Component {
       }
     })
     this.setState({
-      searchData: results
+      searchData: results.length ? results : "empty"
     })
   }
 
@@ -68,7 +75,12 @@ class App extends React.Component {
     return (
       <div className="page-component">
         <SearchReviewsComponent search={this.searchReviews}/>
-        {data.slice(0,10).map((reviewData)=>{
+        { typeof data === "string" && 
+        <div className="no-results-search">No results found. <b>Try</b> removing a filter, changing your search, or 
+        <span onClick={this.clearSearch} className="clear-all on-click"> clear all </span> 
+        to read reviews.</div>}
+        { typeof data === "object" && 
+        data.slice(0,10).map((reviewData)=>{
           return (
             <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
               {/* <ReviewsSortComponent/> */}
