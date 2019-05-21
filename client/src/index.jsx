@@ -1,8 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import axios from "axios"
-import ReviewsComponent from "./components/reviews.jsx"
-// import SearchReviewsComponent from "./components/SearchReviewsComponent.jsx"
+import ReviewsComponent from "./components/reviewsComponent/reviews.jsx"
+import SearchReviewsComponent from "./components/searchComponent/search.jsx"
 // import ReviewsSortComponent from "./components/ReviewsSortComponent.jsx"
 
 class App extends React.Component {
@@ -49,11 +49,11 @@ class App extends React.Component {
   render () {
     return (
       <div className="page-component">
+        <SearchReviewsComponent/>
         {this.state.data.map((reviewData)=>{
           return (
             <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
-              {/* <ReviewsSortComponent/>
-              <SearchReviewsComponent/> */}
+              {/* <ReviewsSortComponent/> */}
               <ReviewsComponent reviewData={reviewData} popUp={this.popUp} popUpStatus={this.state.popUp}/>  
             </div>
           )

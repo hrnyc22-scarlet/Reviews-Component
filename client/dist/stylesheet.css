@@ -3,9 +3,43 @@
 .page-component {
   background-color: #f2f2f2;
   padding: 5%;
-  margin:0;
+  margin: 0;
+  border: 0;
 }
 
+/*search component*/
+
+.search-container {
+  height:2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  border: 1px solid lightgray;
+  background-color: white;
+}
+
+.search-container:focus-within {
+  height:2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  border: 1px solid lightgray;
+  outline: 2px solid green;
+  background-color: white;
+}
+
+
+.search-icon {
+  width: 6%;
+  height: 6%;
+  display: inline-block;
+}
+
+.input {
+  border: 0;
+  width: 90%;
+  margin-left: 2%;
+  display: inline-block;
+  font-size: 14pt;
+}
 
 /*review component*/
 
