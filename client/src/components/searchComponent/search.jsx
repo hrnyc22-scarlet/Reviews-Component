@@ -1,12 +1,10 @@
 import React from 'react'
-// import Hilitor from './hilitor.jsx'
 
 class Search extends React.Component {
   constructor (props) {
     super (props)
     this.state = {
       input: "Search reviews",
-      // myHilitor: new Hilitor ("searchable")
     }
     this.handleChange = this.handleChange.bind(this)
     this.onEnterPress = this.onEnterPress.bind(this)
@@ -23,7 +21,6 @@ class Search extends React.Component {
     this.setState ({
       input: ""
     })
-    // this.state.myHilitor.remove()
   }
 
   onEnterPress (e) {
@@ -32,7 +29,6 @@ class Search extends React.Component {
       this.props.search(this.state.input);
       this.handleClear
     }
-    // this.state.myHilitor.apply("highlight words");
   }
 
   render () {

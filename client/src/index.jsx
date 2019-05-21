@@ -71,12 +71,8 @@ class App extends React.Component {
   componentDidMount() {
     this.getAllData()
   }
-  //need to fix the state
-  //var Highlight = require('react-highlighter');
-
   render () {
-    let data;
-    this.state.searchData.length ? data = this.state.searchData : data = this.state.data;
+    let data = this.state.searchData.length ? this.state.searchData : this.state.data; //need to fix the state
     return (
       <div className="page-component">
         <SearchReviewsComponent search={this.searchReviews}/>
