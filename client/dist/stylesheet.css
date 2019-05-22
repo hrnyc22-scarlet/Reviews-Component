@@ -50,7 +50,7 @@
   width: 85%;
   margin-left: 2%;
   display: inline-block;
-  font-size: 14pt;
+  font-size: 2vw;
   color: grey;
 }
 
@@ -59,7 +59,7 @@
   width: 85%;
   margin-left: 2%;
   display: inline-block;
-  font-size: 14pt;
+  font-size: 2vw;
   color: black;
   outline-width: 0;
 }
