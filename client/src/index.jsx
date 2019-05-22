@@ -3,8 +3,7 @@ import ReactDOM from "react-dom"
 import axios from "axios"
 import ReviewsComponent from "./components/reviewsComponent/reviews.jsx"
 import SearchReviewsComponent from "./components/searchComponent/search.jsx"
-
-// import ReviewsSortComponent from "./components/ReviewsSortComponent.jsx"
+import ReviewsSortComponent from "./components/sortComponent/sortContainer.jsx"
 
 class App extends React.Component {
   constructor (props) {
@@ -75,17 +74,17 @@ class App extends React.Component {
     let data = this.state.searchData.length ? this.state.searchData : this.state.data; //need to fix the state
     return (
       <div className="page-component">
+        <ReviewsSortComponent/>
         <SearchReviewsComponent search={this.searchReviews}/>
         { typeof data === "string" && 
           <div className="no-results-search">No results found. <b>Try</b> removing a filter, changing your search, or 
-          <span onClick={this.clearSearch} className="clear-all on-click"> clear all </span> 
+          <span onClick={this.clearSearch} className="clear-all"> clear all </span> 
           to read reviews.</div>
         }
         { typeof data === 'object' && 
           data.slice(0,10).map((reviewData)=>{
             return (
               <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
-                {/* <ReviewsSortComponent/> */}
                 <ReviewsComponent 
                   reviewData={reviewData} 
                   popUp={this.popUp} 
