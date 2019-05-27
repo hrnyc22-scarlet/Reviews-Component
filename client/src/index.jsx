@@ -14,6 +14,7 @@ class App extends React.Component {
       searchedData: [],
       searchTerm: "",
       popUp: false,
+      ratingFilter: [],
       dateFilter: [],
       travelerTypeFilter: [],
       languageFilter: []
@@ -33,9 +34,10 @@ class App extends React.Component {
     })
   }
 
-  updateFilter (date,travelerType,language) {
+  updateFilter (rating,date,travelerType,language) {
     this.setState((state)=>{
       return {
+        "ratingFilter": rating ? rating : state.ratingFilter,
         "dateFilter": date ? date : state.dateFilter,
         "travelerTypeFilter": travelerType ? travelerType : state.travelerTypeFilter,
         "languageFilter": language ? language : state.languageFilter
@@ -46,9 +48,11 @@ class App extends React.Component {
   filterData () {
     let results = []
     let data = this.state.searchedData.length ? this.state.searchedData : this.state.data
-    if (this.state.dateFilter.length || this.state.travelerTypeFilter.length || this.state.languageFilter.length){
+    if (this.state.ratingFilter.length || this.state.dateFilter.length || this.state.travelerTypeFilter.length || this.state.languageFilter.length){
       results = data.filter((review) => {
         return (
+          (this.state.ratingFilter.length ? review.Trip_Rating > ratingFilter[0] : true)
+          && 
           (this.state.dateFilter.length ? this.state.dateFilter.includes(review.Date.split(" ")[0]) : true)
           && 
           (this.state.travelerTypeFilter.length ? this.state.travelerTypeFilter.includes(review.Traveler_Type) : true)
