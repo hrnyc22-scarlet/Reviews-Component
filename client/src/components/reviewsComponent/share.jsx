@@ -1,6 +1,6 @@
 
 import React from "react"
-import { EmailShareButton,EmailIcon } from 'react-share';
+import { EmailShareButton } from 'react-share';
 
 
 class Share extends React.Component {
@@ -29,17 +29,18 @@ class Share extends React.Component {
       <span>
         <span id="black" className="share on-click" onClick={this.props.popUp}>Share</span>
         {this.props.popUpStatus ? (
-          <div className="popup">    
-            <div>
-              <EmailShareButton
-                url={"www.google.co.il"}
-                className="popup-icon">
-                <EmailIcon
-                  size={32}
-                  round />
+          <div className="popup-container">   
+            <img className="popup-arrow" src="./UpArrowWhite.png"></img> 
+            <div className="share-container">
+              <EmailShareButton url={"www.google.co.il"}>
+                <img className="share-icon" src="./Email.png"></img>
+                <span className="share-text">Email</span>
               </EmailShareButton>
             </div>
-            <div onClick={this.copyToClipBoard} className="popup-text on-click">Copy</div>
+            <div onClick={this.copyToClipBoard} className="share-container">
+              <img className="share-icon" src="./Copy.png"></img>
+              <span className="share-text">Copy Link</span>
+            </div>
           </div> 
           ) : <div></div>
         }

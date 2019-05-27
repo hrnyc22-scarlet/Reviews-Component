@@ -37,7 +37,12 @@ class Sort extends React.Component {
         </div>
         {this.state.reviews && <div>
           <WriteReview/>
-          <SortReview fillWidth={this.state.fillWidth} updateFilter={this.props.updateFilter}/>
+          <SortReview 
+            fillWidth={this.state.fillWidth} 
+            updateFilter={this.props.updateFilter} 
+            languageCount={this.props.languageCount}
+            ratingCount={this.props.ratingCount}
+          />
         </div>}
         {this.state.qa && <div className="placeholder">QA TIME BROS</div>}
         {this.state.roomTips && <div className="placeholder">ROOM TIPS TIME BROS</div>}

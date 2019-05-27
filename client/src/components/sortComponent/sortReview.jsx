@@ -8,7 +8,7 @@ const sortReview = function (props) {
   return (
     <div className="sort-review-container">
       <div className="flex-1">
-        <TravelerRating updateFilter={props.updateFilter} fillWidth={props.fillWidth}/>
+        <TravelerRating updateFilter={props.updateFilter} ratingCount={props.ratingCount}/>
       </div>
       <div className="flex-2">
         <TimeOfYear updateFilter={props.updateFilter}/>
@@ -17,7 +17,7 @@ const sortReview = function (props) {
         <TravelerType updateFilter={props.updateFilter}/>
       </div>
       <div className="flex-4">
-        <Language updateFilter={props.updateFilter} languageNumber={{"All":22,"English":22,"German":0,"Spanish":0,"Latin":0}}/>
+        <Language updateFilter={props.updateFilter} languageCount={props.languageCount}/> 
       </div>
     </div>
   )

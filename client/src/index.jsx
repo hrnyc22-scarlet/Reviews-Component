@@ -12,6 +12,8 @@ class App extends React.Component {
       data:[],
       filteredData: [],
       searchedData: [],
+      languageCount: 0,
+      ratingCount: 0,
       searchTerm: "",
       popUp: false,
       ratingFilter: [],
@@ -62,7 +64,6 @@ class App extends React.Component {
           (this.state.languageFilter.length ? this.state.languageFilter.includes(review.Language) : true)
         )
       })
-      console.log('this is results from the filter',results)
     }
     this.setState({
       filteredData: results.length ? results : "empty",
@@ -92,6 +93,32 @@ class App extends React.Component {
       this.setState({
         data:results.data
       })
+      return results.data
+    })
+    .then((data)=>{
+      let languageCount = {
+        "All": data.length,
+        "English":0,
+        "Latin":0,
+        "Spanish":0,
+        "German":0
+      }
+      let ratingCount = {
+        "total": data.length,
+        "5":0,
+        "4":0,
+        "3":0,
+        "2":0,
+        "1":0
+      }
+      data.forEach(function(review){
+        ratingCount[JSON.stringify(review.Trip_Rating)] = ratingCount[JSON.stringify(review.Trip_Rating)] + 1
+        languageCount[JSON.stringify(review.Language)] = languageCount[JSON.stringify(review.Language)] + 1
+      })
+      this.setState({
+        "ratingCount":ratingCount,
+        "languageCount":languageCount
+      })
     })
     .catch((err)=>{
       console.log('error getting data',err)
@@ -118,7 +145,11 @@ class App extends React.Component {
     data = this.state.filteredData.length && this.state.filteredData !== "empty" ? this.state.filteredData : data; //need to fix the state
     return (
       <div className="page-component">
-        <ReviewsSortComponent updateFilter={this.updateFilter}/>
+        <ReviewsSortComponent 
+          updateFilter={this.updateFilter} 
+          languageCount={this.state.languageCount}
+          ratingCount={this.state.ratingCount}
+        />
         <SearchReviewsComponent search={this.searchReviews}/>
         <div className="reviews-list-container">
           { typeof data === "string" && 
