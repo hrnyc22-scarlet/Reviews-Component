@@ -20,6 +20,11 @@
   border: 0;
 }
 
+.clear {
+  clear:both;
+  line-height:0;
+}
+
 
 /**************************************/
 /**************************************/
@@ -55,7 +60,7 @@
   background-color: white;
   border-left: 1px solid #e5e5e5;
   border-right: 1px solid #e5e5e5;
-  border-top: 1px solid #e5e5e5;
+  border-top: 3px solid #078171;
   border-bottom: 1px solid transparent;
   box-sizing: border-box;
   text-align: center;
@@ -66,37 +71,142 @@
   padding-bottom: 5%; 
 }
 
+.placeholder {
+  padding: 10%;
+  font-size: 30px;
+  margin: 2%;
+}
 /*write review*/
 
-.write-review-container {
-  border-bottom: 1px solid rgb(229, 229, 229);
-  margin: 1%;
-  height: 50px;
+.reviews-title {
+  color: black;
+  font-weight: 700;
+  font-size: 28px;
+  vertical-align: text-bottom;
 }
 
-.write-review-container:after {
-  content: "";
-  display: table;
-  clear: both;
+.write-review-container {
+  padding-bottom: 16px;
+  margin: 2%;
+  border-bottom: 1px solid rgb(229, 229, 229);
+  display: flex;
+  flex-direction: row; 
+  height: 4.5vw;
+}
+
+.write-review-button-container {
+  margin-left: auto;
+  display: flex;
+  width: 23%;
 }
 
 .write-review {
-  padding: 2% 5%;
+  padding: 6%;
+  text-align: center;
   background-color: rgb(7, 129, 113);
-  float: right;
-  margin-right: .5%;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  width: 73%;
 } 
 
 .write-review-image-container {
-  object-fit: contain;
+  margin-left: .5%;
+  width: 25%;
+  background-clip: padding-box;
+  background: #078171;
+  border-radius: 2px;
+  border: 1px solid #078171;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 8px 10px;
 }
 
 .write-review-dropdown {
   padding: 2%;
   background-color: rgb(7, 129, 113);
+  margin-left: auto;
+  height: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*sort review*/
+
+.sort-review-container {
+  margin: 2.5%;
+  display: flex;
+  flex-direction: row; 
+}
+
+.flex-1 {
+  width: 41.67%;
+}
+.flex-2 {
+  width: 16.67%;
+}
+.flex-3 {
+  width: 16.67%;
+}
+.flex-4 {
+  width: 25%;
+}
+
+.score-title {
+  margin-bottom: 2vw;
+  color: black;
+  font-weight: 550;
+}
+
+.score {
+  margin-bottom: 1.5vw;
+}
+
+/*traveler-Rating*/
+
+.traveler-rating {
+}
+
+.graph {
+  background: #e5e5e5 none repeat scroll 0 0;
+  vertical-align: bottom;
+  height: 12px;
   float: right;
-  height: 20px;
-  width: 20px;
+  width: 60%;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 4%;
+  margin-top: 1%
+}
+
+.graph-fill {
+  background: #078171 none repeat scroll 0 0;
+  display: inline-block;
+  height: 100%;
+  vertical-align: text-top;
+  border-radius: 2px;
+}
+
+.graph-number {
+  float: right;
+}
+
+.graph-name {
+  margin-left: 2%;
+}
+
+/*time of year*/
+
+.time-of-year {
+  padding-left: 15%;
+}
+.traveler-type {
+  padding-left: 10%;
+}
+.language {
+  padding-left: 5%;
 }
 
 /**************************************/
@@ -106,6 +216,7 @@
 /*search component*/
 
 .search-container {
+  clear: both;
   height:1%;
   margin-bottom: 1%;
   padding: 1%;
