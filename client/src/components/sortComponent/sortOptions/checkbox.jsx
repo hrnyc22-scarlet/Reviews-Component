@@ -11,7 +11,7 @@ class Checkbox extends React.Component {
 
   handleCheckboxChange () {
     this.setState({ checked: event.target.checked })
-    props.updateFilter(...props.selection)
+    this.props.updateFilter(...this.props.selection)
   }
 
   render() {

@@ -42,16 +42,20 @@ class App extends React.Component {
         "travelerTypeFilter": travelerType ? travelerType : state.travelerTypeFilter,
         "languageFilter": language ? language : state.languageFilter
       }
+    },()=>{
+      this.filterData()
     })
   }
 
   filterData () {
+    console.log('hit the filter')
     let results = []
     let data = this.state.searchedData.length ? this.state.searchedData : this.state.data
     if (this.state.ratingFilter.length || this.state.dateFilter.length || this.state.travelerTypeFilter.length || this.state.languageFilter.length){
+      console.log('hit the filter if statement')
       results = data.filter((review) => {
         return (
-          (this.state.ratingFilter.length ? review.Trip_Rating > ratingFilter[0] : true)
+          (this.state.ratingFilter.length ? review.Trip_Rating > this.state.ratingFilter[0] && review.Trip_Rating <= (this.state.ratingFilter[0] + 1) : true)
           && 
           (this.state.dateFilter.length ? this.state.dateFilter.includes(review.Date.split(" ")[0]) : true)
           && 
@@ -60,6 +64,7 @@ class App extends React.Component {
           (this.state.languageFilter.length ? this.state.languageFilter.includes(review.Language) : true)
         )
       })
+      console.log('this is results from the filter',results)
     }
     this.setState({
       filteredData: results.length ? results : "empty",
@@ -112,7 +117,7 @@ class App extends React.Component {
   }
   render () {
     let data = this.state.searchedData.length ? this.state.searchedData : this.state.data; //need to fix the state
-    let data = this.state.filteredData.length ? this.state.filteredData : data; //need to fix the state
+    data = this.state.filteredData.length ? this.state.filteredData : data; //need to fix the state
     return (
       <div className="page-component">
         <ReviewsSortComponent updateFilter={this.updateFilter}/>
