@@ -34,6 +34,7 @@ class Search extends React.Component {
   render () {
     return (
     <form className="search-container">
+      {console.log('hitting inside render search')}
       <img src="./Search Icon.png" className="search-icon"></img>
       <input 
       onChange={this.handleChange} 

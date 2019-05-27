@@ -48,11 +48,9 @@ class App extends React.Component {
   }
 
   filterData () {
-    console.log('hit the filter')
     let results = []
     let data = this.state.searchedData.length ? this.state.searchedData : this.state.data
     if (this.state.ratingFilter.length || this.state.dateFilter.length || this.state.travelerTypeFilter.length || this.state.languageFilter.length){
-      console.log('hit the filter if statement')
       results = data.filter((review) => {
         return (
           (this.state.ratingFilter.length ? review.Trip_Rating > this.state.ratingFilter[0] && review.Trip_Rating <= (this.state.ratingFilter[0] + 1) : true)
@@ -117,7 +115,7 @@ class App extends React.Component {
   }
   render () {
     let data = this.state.searchedData.length ? this.state.searchedData : this.state.data; //need to fix the state
-    data = this.state.filteredData.length ? this.state.filteredData : data; //need to fix the state
+    data = this.state.filteredData.length && this.state.filteredData !== "empty" ? this.state.filteredData : data; //need to fix the state
     return (
       <div className="page-component">
         <ReviewsSortComponent updateFilter={this.updateFilter}/>
@@ -125,8 +123,9 @@ class App extends React.Component {
         <div className="reviews-list-container">
           { typeof data === "string" && 
             <div className="no-results-search">No results found. <b>Try</b> removing a filter, changing your search, or 
-            <span onClick={this.clearSearch} className="clear-all"> clear all </span> 
-            to read reviews.</div>
+              <span onClick={this.clearSearch} className="clear-all"> clear all </span> 
+              to read reviews.
+            </div>
           }
           { typeof data === 'object' && 
             data.slice(0,10).map((reviewData)=>{
