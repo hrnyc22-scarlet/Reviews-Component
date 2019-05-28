@@ -30,7 +30,7 @@ var reviews = function (props) {
           />
         </div>
       </div>
-      <span id="black" className="share on-click">Helpful</span><span id="black" className="share on-click">Repost</span><Share popUp={props.popUp} popUpStatus={props.popUpStatus}/>
+      <span id="black" className="share on-click">Helpful</span><span id="black" className="share on-click">Repost</span><Share/>
     </div>
   )
 }

@@ -432,6 +432,12 @@
   color: gray;
 }
 
+.hidden-link {
+  position: absolute; 
+  left: -1000px; 
+  top: -1000px;
+}
+
 .share:hover {
   text-decoration: underline;
   cursor: pointer;
@@ -444,6 +450,7 @@
   border-radius: 2px;
   margin-left: 8%;
   margin-top: 1%;
+  /* margin-bottom: 20px; */
   z-index: 10;
   padding: 16px;
 }
@@ -460,11 +467,20 @@
 }
 
 .share-text {
-  vertical-align: text-bottom;
+  vertical-align: middle;
+  padding-bottom: 25px;
+  padding-top: 5px;
+  padding-left: 10px;
+  /* margin-bottom: 10px; */
+  /* vertical-align: text-bottom; */
 }
 
 .share-icon {
+  /* Bens Code */
   height: 2.75vw;
   width: 2.75vw;
+  margin-bottom: -10px; 
+  /* height: 2.5vw;
+  width: 2.5vw; */
 }
 

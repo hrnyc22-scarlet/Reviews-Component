@@ -10,19 +10,16 @@ class App extends React.Component {
     super (props)
     this.state = {
       data:[],
-      filteredData: [],
       searchedData: [],
-      languageCount: 0,
-      ratingCount: 0,
       searchTerm: "",
-      popUp: false,
+      filteredData: [],
       ratingFilter: [],
       dateFilter: [],
       travelerTypeFilter: [],
-      languageFilter: []
+      languageFilter: [],
+      languageCount: 0,
+      ratingCount: 0,
     }
-    this.popUp = this.popUp.bind(this)
-    this.popDown = this.popDown.bind(this)
     this.getAllData = this.getAllData.bind(this)
     this.searchReviews = this.searchReviews.bind(this)
     this.clearSearch = this.clearSearch.bind(this)
@@ -125,18 +122,6 @@ class App extends React.Component {
     })
   }
 
-  popUp () {
-    this.setState({
-      popUp: true
-    })
-  }
-
-  popDown () {
-    this.setState({
-      popUp: false
-    })
-  }
-
   componentDidMount() {
     this.getAllData()
   }
@@ -161,10 +146,9 @@ class App extends React.Component {
           { typeof data === 'object' && 
             data.slice(0,10).map((reviewData)=>{
               return (
-                <div onClick={this.state.popUp ? this.popDown : ''} className="review-container"> 
+                <div className="review-container"> 
                   <ReviewsComponent 
                     reviewData={reviewData} 
-                    popUp={this.popUp} 
                     popUpStatus={this.state.popUp} 
                     searchTerm={this.state.searchTerm}
                   />  
