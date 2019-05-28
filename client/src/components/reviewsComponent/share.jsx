@@ -6,8 +6,6 @@ import { EmailShareButton } from 'react-share';
 class Share extends React.Component {
   constructor (props) {
     super(props)
-    // this.node = React.createRef();
-    // this.textInput = React.createRef();
     this.state = {
       copySuccess: false,
       helpful: 0,
@@ -15,24 +13,14 @@ class Share extends React.Component {
       popUp: false
     }
     this.copyToClipBoard = this.copyToClipBoard.bind(this)
-    // this.email = this.email.bind(this)
     this.changePopUp = this.changePopUp.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
 
   copyToClipBoard () {
-    console.log('hit the copy')
     this.textArea.select();
     document.execCommand('copy');
   }
-
-  // copyToClipBoard (e) {
-  //   console.log('hits the copy')
-  // }
-
-  // email (e) {
-  //   console.log('hits the email')
-  // }
 
   changePopUp () {
     this.setState({
@@ -62,7 +50,7 @@ class Share extends React.Component {
         <form className={"hidden-link"}>
           <textarea
             ref={(textarea) => this.textArea = textarea}
-            value='www.google.com/rickroll'
+            value='props.url'//change this to props.url 
           />
         </form>
         <span id="black" className="share on-click" onClick={this.changePopUp}>Share</span>

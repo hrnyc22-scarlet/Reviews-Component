@@ -22,7 +22,7 @@ class Body extends React.Component {
 
   render () {
     const {Body,Date_of_Stay, Trip_Type, Room_Tip, Service_Rating, Sleep_Rating, Location_Rating, Value_Rating} = this.props.reviewBody;
-    let dynamicBody = Body.length > 50 && this.state.readMore ? Body.slice(0,200) : Body
+    let dynamicBody = Body.length > 50 && this.state.readMore ? '"' + Body.slice(0,200) + '..."' : '"' + Body + '"'
     return (
       <div>
         <Highlight search={this.props.searchTerm}>

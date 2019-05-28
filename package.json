@@ -9,9 +9,14 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^24.8.0"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "jest",
+    "run": "nodemon server.js",
+    "bundle": "webpack --w"
+  },
   "dependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
