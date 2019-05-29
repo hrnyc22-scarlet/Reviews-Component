@@ -15,6 +15,7 @@ class Checkbox extends React.Component {
     },
     ()=>{
       if (this.state.checked) {
+        console.log(this.props.selection)
         this.props.updateFilter(...this.props.selection)
       } else {
         this.props.updateFilter(...this.props.clear)

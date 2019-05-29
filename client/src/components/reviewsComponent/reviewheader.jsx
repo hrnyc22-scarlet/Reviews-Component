@@ -1,7 +1,5 @@
 import React from "react"
 
-//change src to 1/20 local images
-
 var ReviewHeader = function (props) {
   const {Username, Date, User_Contributions, Helpful_Votes,Image_Location, Location} = props.reviewHeader; 
   return (
