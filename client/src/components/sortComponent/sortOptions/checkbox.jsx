@@ -25,7 +25,7 @@ class Checkbox extends React.Component {
   render() {
     return (
       <span>
-        <label className="checkbox">
+        <label className={"checkbox " + this.props.classValue}>
           <input type="checkbox"
             checked={this.state.checked}
             onChange={this.handleCheckboxChange}

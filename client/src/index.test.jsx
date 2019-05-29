@@ -13,5 +13,15 @@ describe('Reviews', () => {
     await expect(content).toContain('popup-container')
   })
 
+  it('should sort reviews by rating', async () => {
+    await page.click('.rating-checkbox')
+    // let content = await page.content()
+    let elementsLength = await page.evaluate(() => {
+      return document.getElementsByClassName('rating-circle-full').length;
+    });
+    expect(elementsLength/10).toBe(5)
+  })
+
+  // it('should search reviews by search term')
 });
 
