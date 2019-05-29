@@ -30,7 +30,7 @@ var reviews = function (props) {
           />
         </div>
       </div>
-      <span id="black" className="share on-click">Helpful</span><span id="black" className="share on-click">Repost</span><Share/>
+      <span id="black" className="react-button on-click">Helpful</span><span id="black" className="react-button on-click">Repost</span><Share/>
     </div>
   )
 }

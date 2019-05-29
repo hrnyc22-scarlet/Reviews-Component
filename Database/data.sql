@@ -1,3 +1,5 @@
+/*update data with specific trip_type, language, location and image*/
+
 CREATE TABLE myTable (
   Username varchar(255) default NULL,
   Date varchar(255),

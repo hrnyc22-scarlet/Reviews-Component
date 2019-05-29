@@ -53,7 +53,7 @@ class Share extends React.Component {
             value='props.url'//change this to props.url 
           />
         </form>
-        <span id="black" className="share on-click" onClick={this.changePopUp}>Share</span>
+        <span id="black" className="react-button share on-click" onClick={this.changePopUp}>Share</span>
         {this.state.popUp ? (
           <div className="popup-container">   
             <img className="popup-arrow" src="./UpArrowWhite.png"></img> 

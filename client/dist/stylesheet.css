@@ -427,7 +427,7 @@
 
 /*share buttons*/
 
-.share {
+.react-button {
   margin-left: 2%;
   color: gray;
 }
@@ -438,7 +438,7 @@
   top: -1000px;
 }
 
-.share:hover {
+.react-button:hover {
   text-decoration: underline;
   cursor: pointer;
 }
