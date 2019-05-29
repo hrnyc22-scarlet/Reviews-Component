@@ -8,7 +8,7 @@ describe('Reviews', () => {
   })
 
   it('should pop up the share component when Share button is pressed', async () => {
-    await page.click('.share')
+    await page.click('.react-button share on-click')
     let content = await page.content()
     await expect(content).toContain('popup-container')
   })
