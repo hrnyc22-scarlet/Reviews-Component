@@ -10,10 +10,10 @@ var reviews = function (props) {
     Trip_Type, Room_Tip, Trip_Rating, 
     Service_Rating, Sleep_Rating, Location_Rating, 
     Value_Rating, Header, Body, User_Contributions, 
-    Helpful_Votes} = props.reviewData; //need to add location, image, language
+    Helpful_Votes,Image_Location,Location} = props.reviewData; //need to add location, image, language
   return (
     <div className="review">
-      <ReviewHeader reviewHeader={{Username,Date,User_Contributions, Helpful_Votes}}/>
+      <ReviewHeader reviewHeader={{Username,Date,User_Contributions, Helpful_Votes,Image_Location,Location}}/>
       <div className="review-body">
         <div className="review-body-content">
           <div className="rating-container" >

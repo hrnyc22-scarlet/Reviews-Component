@@ -5,7 +5,7 @@ let findAll = (callback) => {
   SELECT 
   *
   FROM 
-  myTable
+  Reviews
   `,(err, rows ) => {
     if (err) {
       callback(err,null)
@@ -15,12 +15,6 @@ let findAll = (callback) => {
     }
   });
 }
-
-
-
-
-
-
 
 module.exports = {
   findAll,
