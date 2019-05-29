@@ -8,24 +8,34 @@
     "node": ">=6.13.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^24.8.0"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "jest",
+    "bundle": "webpack --w"
+  },
   "dependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "body-parser": "^1.19.0",
     "express": "^4.15.0",
+    "jest-puppeteer": "^4.2.0",
     "jquery": "^3.1.1",
+    "material-ui-rating": "^3.1.1",
     "mongoose": "^4.9.6",
     "morgan": "^1.9.1",
+    "npm": "^6.9.0",
+    "puppeteer": "^1.17.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-rating": "^1.7.2",
-    "react-star-ratings": "^2.3.0",
+    "react-highlighter": "^0.4.3",
+    "react-share": "^3.0.0",
     "request": "^2.81.0",
     "sqlite3": "^4.0.8",
     "webpack": "^4.29.6",

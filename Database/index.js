@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 
-let db = new sqlite3.Database('./randomDatabase.db', (err) => {
+let db = new sqlite3.Database('/Users/macbook/Documents/GitHub/hrnyc-senior-modules/Reviews-Component/Database/Hotels', (err) => {
   if (err) {
     return console.error(err.message);
   }
