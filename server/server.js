@@ -5,15 +5,13 @@ const morgan = require('morgan')
 const path = require('path')
 const db = require('../Database/components.js')
 const PORT = process.env.PORT || 3002
-// const router = require('./router.js')
 
 app.use(bodyParser.json())
 app.use(morgan('combined'))
-// app.use('/',router)
-app.use('/',express.static(path.resolve(__dirname,'../client/dist/')))
+app.use('/hotels/:id',express.static(path.resolve(__dirname,'../client/dist/')))
 
-app.get('/reviews',(req,res)=>{
-  db.findAll((err,result)=>{
+app.get('/review/:hotelID',(req,res)=>{
+  db.findAll(req.params.hotelID,(err,result)=>{
     if (err) {
       console.log('error',err)
       res.sendStatus(500)

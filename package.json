@@ -37,6 +37,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-highlighter": "^0.4.3",
+    "react-router-dom": "^5.0.0",
     "react-share": "^3.0.0",
     "request": "^2.81.0",
     "sqlite3": "^4.0.8",
