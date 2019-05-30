@@ -1,6 +1,9 @@
 const sqlite3 = require('sqlite3').verbose();
+const path = require('path')
 
-let db = new sqlite3.Database('/Users/macbook/Documents/GitHub/hrnyc-senior-modules/Reviews-Component/Database/Hotels', (err) => {
+const DBPath = path.join(__dirname + "/Hotels")
+
+let db = new sqlite3.Database(DBPath, (err) => {
   if (err) {
     return console.error(err.message);
   }
