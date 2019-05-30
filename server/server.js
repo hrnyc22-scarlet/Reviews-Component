@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const path = require('path')
 const db = require('../Database/components.js')
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3002
 // const router = require('./router.js')
 
 app.use(bodyParser.json())
@@ -25,9 +25,9 @@ app.get('/reviews',(req,res)=>{
   })
 })
 
-app.listen(port, (err) => {
+app.listen(PORT, (err) => {
   if (err) throw err
   else {
-    console.log(`server is listening on ${port}`)
+    console.log(`server is listening on ${PORT}`)
   }
 })
