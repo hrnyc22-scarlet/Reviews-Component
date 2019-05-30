@@ -14,10 +14,7 @@ module.exports = {
         test: /\.jsx?/,
         exclude: [/\.db$/,/\.sql$/],
         loader: 'babel-loader'
-        // Take a look at your `.babelrc` file (located in same the directory
-        // as your `package.json` file) to see how your Babel presets are
-        // configured.
-      }
+      },        
     ]
   }
 };

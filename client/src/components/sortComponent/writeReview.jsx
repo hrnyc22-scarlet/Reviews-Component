@@ -7,7 +7,7 @@ const writeReview = function (props) {
       <div className="write-review-button-container">
         <span className="write-review">Write a review</span>
         <span className="write-review-image-container">
-          <img className="write-review-dropdown"src="./DropDownArrowWhite.png"></img>
+          <img className="write-review-dropdown"src="./icons/DropDownArrowWhite.png"></img>
         </span>
       </div>
     </div>

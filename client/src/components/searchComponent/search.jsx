@@ -34,7 +34,7 @@ class Search extends React.Component {
   render () {
     return (
     <form className="search-container">
-      <img src="./Search Icon.png" className="search-icon"></img>
+      <img src="./icons/Search Icon.png" className="search-icon"></img>
       <input 
       onChange={this.handleChange} 
       onClick={this.state.input === "Search reviews" ? this.handleClear : ""} 
@@ -44,7 +44,7 @@ class Search extends React.Component {
       name="name" 
       className="input"
       />
-      <img onClick={this.handleClear} src="./Cancel Search Icon.png" className="cancel-search-icon on-click"></img>
+      <img onClick={this.handleClear} src="./icons/Cancel Search Icon.png" className="cancel-search-icon on-click"></img>
     </form>
     )}
 }
