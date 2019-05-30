@@ -84,7 +84,7 @@ class App extends React.Component {
   }
 
   getAllData () {
-    axios.get(`http://3.13.140.54:3002/review/${window.location.href.slice(-2)}`) //need to edit the slice to return the correct 2 numbers, also local won't work as it is pointed to review component
+    axios.get(`http://3.13.140.54:3002/review/${window.location.href.slice(32)}`) //need to edit the slice to return the correct 2 numbers, also local won't work as it is pointed to review component
     .then((results)=>{
       this.setState({
         data:results.data
