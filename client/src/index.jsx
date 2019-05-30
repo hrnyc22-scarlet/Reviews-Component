@@ -84,7 +84,7 @@ class App extends React.Component {
   }
 
   getAllData () {
-    axios.get('/reviews')
+    axios.get(`/review/${window.location.href.slice(-2)}`)
     .then((results)=>{
       this.setState({
         data:results.data
@@ -161,4 +161,4 @@ class App extends React.Component {
   }
  }
 
- ReactDOM.render(<App/>,document.getElementById('app'))
+ ReactDOM.render(<App/>,document.getElementById('reviews'))

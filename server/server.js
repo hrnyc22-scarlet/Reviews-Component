@@ -4,16 +4,14 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const path = require('path')
 const db = require('../Database/components.js')
-const port = process.env.PORT || 3000
-// const router = require('./router.js')
+const PORT = process.env.PORT || 3002
 
 app.use(bodyParser.json())
 app.use(morgan('combined'))
-// app.use('/',router)
-app.use('/',express.static(path.resolve(__dirname,'../client/dist/')))
+app.use('/hotels/:id',express.static(path.resolve(__dirname,'../client/dist/')))
 
-app.get('/reviews',(req,res)=>{
-  db.findAll((err,result)=>{
+app.get('/review/:hotelID',(req,res)=>{
+  db.findAll(req.params.hotelID,(err,result)=>{
     if (err) {
       console.log('error',err)
       res.sendStatus(500)
@@ -25,9 +23,9 @@ app.get('/reviews',(req,res)=>{
   })
 })
 
-app.listen(port, (err) => {
+app.listen(PORT, (err) => {
   if (err) throw err
   else {
-    console.log(`server is listening on ${port}`)
+    console.log(`server is listening on ${PORT}`)
   }
 })

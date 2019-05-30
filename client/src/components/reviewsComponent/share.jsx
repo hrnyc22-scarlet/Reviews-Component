@@ -56,15 +56,15 @@ class Share extends React.Component {
         <span id="black" className="react-button share on-click" onClick={this.changePopUp}>Share</span>
         {this.state.popUp ? (
           <div className="popup-container">   
-            <img className="popup-arrow" src="./UpArrowWhite.png"></img> 
+            <img className="popup-arrow" src="./icons/UpArrowWhite.png"></img> 
             <div className="share-container">
               <EmailShareButton url={"www.google.co.il"}>
-                <img className="share-icon" src="./Email.png"></img>
+                <img className="share-icon" src="./icons/Email.png"></img>
                 <span className="share-text">Email</span>
               </EmailShareButton>
             </div>
             <div onClick={this.copyToClipBoard} className="share-container">
-              <img className="share-icon" src="./Copy.png"></img>
+              <img className="share-icon" src="./icons/Copy.png"></img>
               <span className="share-text">Copy Link</span>
             </div>
           </div> 
