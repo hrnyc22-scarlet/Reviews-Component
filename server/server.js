@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const path = require('path')
 const db = require('../Database/components.js')
+const port = process.env.PORT || 3000
 // const router = require('./router.js')
 
 app.use(bodyParser.json())
@@ -24,7 +25,6 @@ app.get('/reviews',(req,res)=>{
   })
 })
 
-const port = 3000
 app.listen(port, (err) => {
   if (err) throw err
   else {

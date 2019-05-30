@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "jest",
-    "bundle": "webpack --w",
+    "start dev": "webpack --w nodemon ./server/server.js",
+    "bundle": "webpack",
     "start": "node ./server/server.js"
   },
   "dependencies": {
