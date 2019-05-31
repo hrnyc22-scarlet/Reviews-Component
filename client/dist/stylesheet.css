@@ -13,13 +13,6 @@
   text-decoration: underline;
 }
 
-.page-component {
-  background-color: #f2f2f2;
-  padding: 5%;
-  margin: 0;
-  border: 0;
-}
-
 .clear {
   clear:both;
   line-height:0;
