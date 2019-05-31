@@ -13,7 +13,7 @@ var ReviewHeader = function (props) {
           <b id="black" className="on-click">{Username}</b> <span> wrote a review on {Date}</span>
           </div>
           <div className="location">
-            <span>location {Location}</span><span><b>{User_Contributions}</b> contributions </span><span><b>{Helpful_Votes}</b> helpful votes</span>
+            <span>location {Location} </span><span><b>{User_Contributions}</b> contributions </span><span><b>{Helpful_Votes}</b> helpful votes</span>
           </div>
         </div>
       </div>

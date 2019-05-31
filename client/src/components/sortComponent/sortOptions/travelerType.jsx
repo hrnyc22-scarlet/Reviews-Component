@@ -10,7 +10,7 @@ const TravelerType = function (props) {
         <span className="graph-name">Families</span>
       </div>
       <div className="score">
-        <Checkbox updateFilter={props.updateFilter} selection={[null,null,["Couples"],null]} clear={[null,null,[],null]}/>
+        <Checkbox updateFilter={props.updateFilter} selection={[null,null,["Couple"],null]} clear={[null,null,[],null]}/>
         <span className="graph-name">Couples</span>
       </div>
       <div className="score">
