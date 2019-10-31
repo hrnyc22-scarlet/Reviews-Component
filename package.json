@@ -32,7 +32,7 @@
     "jest-puppeteer": "^4.2.0",
     "jquery": "^3.1.1",
     "material-ui-rating": "^3.1.1",
-    "mongoose": "^4.9.6",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "npm": "^6.9.0",
     "puppeteer": "^1.17.0",
